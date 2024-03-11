@@ -22,16 +22,16 @@ export const destinationAPI = createApi({
         url: `destination/${destination.id}`,
         method: "PUT",
         body: destination,
-        invalidatesTags: ["Destinations"],
       }),
+      invalidatesTags: ["Destinations"],
     }),
     deleteDestination: builder.mutation({
       query: (id) => ({
         url: `destination/${id}`,
         method: "DELETE",
         body: id,
-        invalidatesTags: ["Destinations"],
       }),
+      invalidatesTags: ["Destinations"],
     }),
   }),
 });
