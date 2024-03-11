@@ -1,9 +1,13 @@
 import React from "react";
-import { useGetAllDestinationQuery } from "../api/destinationApi";
+import {
+  useGetAllDestinationQuery,
+  useDeleteDestinationMutation,
+} from "../api/destinationApi";
 
 function DestinationList() {
   const { data, isLoading, isSuccess, isError, error } =
     useGetAllDestinationQuery();
+  const [deleteDestination, results] = useDeleteDestinationMutation();
 
   let content;
   if (isLoading) {
@@ -17,6 +21,12 @@ function DestinationList() {
               {destination.city}, {destination.country} -{" "}
               {destination.daysNeeded} days
             </div>
+            <button
+              className="btn btn-danger form-control"
+              onClick={() => deleteDestination(destination.id)}
+            >
+              Delete
+            </button>
           </div>
         </article>
       );
