@@ -10,4 +10,4 @@ export const destinationAPI = createApi({
   }),
 });
 
-export const { useGetAllDestinaionQuery } = destinationAPI;
+export const { useGetAllDestinationQuery } = destinationAPI;
