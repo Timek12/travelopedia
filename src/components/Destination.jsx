@@ -1,8 +1,10 @@
 import React from "react";
-import { useDeleteDestinationMutation } from "../api/destinationApi";
+import {
+  useDeleteDestinationMutation,
+} from "../api/destinationApi";
 
-function Destination({destination}) {
-  const [deleteDestination, results] = useDeleteDestinationMutation();
+function Destination({destination, enterUpdateMode} ) {
+  const [deleteDestination] = useDeleteDestinationMutation();
 
   return (
     <div
@@ -13,10 +15,17 @@ function Destination({destination}) {
         borderTop: "1px solid #333",
       }}
     >
-      <div className="col-3 offset-3">
-        {destination.city}, {destination.country}
-      </div>
+      <div className="col-2 offset-2">{destination.city}</div>
+      <div className="col-2">{destination.country}</div>
       <div className="col-1 text-warning">{destination.daysNeeded} days</div>
+      <div className="col-2">
+        <button
+          className="btn btn-warning form-control" onClick={() => enterUpdateMode(destination.id)}
+        >
+          Update
+          
+        </button>
+      </div>
       <div className="col-2">
         <button
           className="btn btn-danger form-control"
