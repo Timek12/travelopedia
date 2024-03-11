@@ -15,12 +15,19 @@ function DestinationList() {
   } else if (isSuccess) {
     content = data.map((destination) => {
       return (
-        <article key={destination.id}>
-          <div className="text-center text-info p-2">
-            <div>
-              {destination.city}, {destination.country} -{" "}
-              {destination.daysNeeded} days
-            </div>
+        <div
+          className="row py-1"
+          key={destination.id}
+          style={{
+            borderBottom: "1px solid #333",
+            borderTop: "1px solid #333",
+          }}
+        >
+          <div className="col-3 offset-3">
+            {destination.city}, {destination.country} 
+          </div>
+          <div className="col-1 text-warning">{destination.daysNeeded} days</div>
+          <div className="col-2">
             <button
               className="btn btn-danger form-control"
               onClick={() => deleteDestination(destination.id)}
@@ -28,7 +35,7 @@ function DestinationList() {
               Delete
             </button>
           </div>
-        </article>
+        </div>
       );
     });
   } else if (isError) {
