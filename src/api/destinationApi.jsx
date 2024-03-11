@@ -6,8 +6,13 @@ export const destinationAPI = createApi({
   tagTypes: ["Destinations"],
   endpoints: (builder) => ({
     getAllDestination: builder.query({
-      query: () => "destination",
-      providesTags: ["Destinations"],
+        query: () => ({
+            url: "destination",
+            method: "GET",
+            params: {},
+          }),
+          transformResponse: (res) => res.sort((a, b) => a.city.localeCompare(b.city)),
+          providesTags: ["Destinations"],
     }),
     addDestination: builder.mutation({
       query: (destination) => ({
