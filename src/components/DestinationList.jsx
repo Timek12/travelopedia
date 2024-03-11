@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   useGetAllDestinationQuery,
-  useDeleteDestinationMutation,
 } from "../api/destinationApi";
 import Destination from "./Destination";
 import UpdateDestination from "./UpdateDestination";
@@ -24,7 +23,7 @@ function DestinationList() {
     content = <p>Loading...</p>;
   } else if (isSuccess) {
     content = data.map((destination) => {
-      if (destination.id == updateModeId) {
+      if (destination.id === updateModeId) {
         return (
           <UpdateDestination
             destination={destination}
