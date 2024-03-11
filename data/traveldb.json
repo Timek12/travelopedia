@@ -1,22 +1,28 @@
 {
-    "destination": [
-        {
-            "id": 1,
-            "city": "New York",
-            "country": "USA",
-            "daysNeeded": 3
-        },
-        {
-            "id": 2,
-            "city": "Warsaw",
-            "country": "Poland",
-            "daysNeeded": 7
-        },
-        {
-            "id": 3,
-            "city": "Chicago",
-            "country": "USA",
-            "daysNeeded": 12
-        }
-    ]
+  "destination": [
+    {
+      "id": "1",
+      "city": "New York",
+      "country": "USA",
+      "daysNeeded": 3
+    },
+    {
+      "id": "2",
+      "city": "Warsaw",
+      "country": "Poland",
+      "daysNeeded": 7
+    },
+    {
+      "id": "3",
+      "city": "Chicago",
+      "country": "USA",
+      "daysNeeded": 12
+    },
+    {
+      "id": 17.86449317292529,
+      "city": "Prague",
+      "country": "Cech",
+      "daysNeeded": 7
+    }
+  ]
 }
